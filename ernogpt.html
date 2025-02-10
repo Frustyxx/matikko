@@ -295,7 +295,7 @@
                 body: JSON.stringify({
                     model: "openchat/openchat-7b:free",
                     messages: [{ role: "user", content: userMessage }],
-                    max_tokens: 100
+                    max_tokens: 1000
                 })
             });
             const data = await response.json();
