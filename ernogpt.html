@@ -257,31 +257,48 @@
 
 </html>
 
+<!DOCTYPE html>
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ErnoGPT</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        #chatbox { width: 300px;
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #333; color: white; }
+        h2 { color: #FFD700; }
+        #chatbox {
+            width: 300px;
             height: 400px;
-            overflow-y: auto; 
-            border: 1px solid #282828; 
-            padding: 10px; 
-            margin: 10px auto; 
-            background-color: #555555;
+            overflow-y: auto;
+            border: 1px solid #282828;
             padding: 30px;
+            margin: 10px auto;
+            background-color: #555555;
             border-radius: 30px;
-        
+            text-align: left;
         }
-        #userInput { width: 250px; padding: 5px; border-radius: 10px;}
-        button { padding: 5px 10px; border-radius: 10px;}
+        #userInput {
+            width: 250px;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: #444;
+            color: white;
+        }
+        button {
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #FFD700;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover { background-color: #FFC107; }
     </style>
 </head>
 <body>
-    <h2>AI Chatbot</h2>
+    <h2>ErnoGPT</h2>
     <div id="chatbox"></div>
-    <input type="text" id="userInput" placeholder="Type a message...">
+    <input type="text" id="userInput" placeholder="Kirjoita viesti...">
     <button onclick="sendMessage()">Lähetä</button>
 
     <script>
@@ -290,12 +307,12 @@
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer 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"
+                    "Authorization": "Bearer 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" 
                 },
                 body: JSON.stringify({
-                    model: "openchat/openchat-7b:free",
+                    model: "deepseek/deepseek-r1:free",
                     messages: [{ role: "user", content: userMessage }],
-                    max_tokens: 1000
+                    max_tokens: 500
                 })
             });
             const data = await response.json();
@@ -303,11 +320,28 @@
         }
 
         function sendMessage() {
-            const userInput = document.getElementById("userInput").value;
-            document.getElementById("chatbox").innerHTML += `<p><b>You:</b> ${userInput}</p>`;
-            getResponse(userInput).then(response => {
-                document.getElementById("chatbox").innerHTML += `<p><b>Erno:</b> ${response}</p>`;
-            })
+            const userInput = document.getElementById("userInput");
+            const chatbox = document.getElementById("chatbox");
+
+            if (userInput.value.trim() === "") return; // Ei lähetä tyhjiä viestejä
+
+            chatbox.innerHTML += `<p><b>Sinä:</b> ${userInput.value}</p>`;
+            getResponse(userInput.value).then(response => {
+                chatbox.innerHTML += `<p><b>Erno:</b> ${response}</p>`;
+                chatbox.scrollTop = chatbox.scrollHeight; // Automaattinen skrollaus viimeiseen viestiin
+            });
+
+            userInput.value = ""; // Tyhjentää input-kentän
         }
+
+        // Enter-näppäin lähettää viestin
+        document.getElementById("userInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+                event.preventDefault();
+            }
+        });
     </script>
+</body>
+</html>
 </body>
