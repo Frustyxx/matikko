@@ -10,11 +10,21 @@
 			0 0 20px #ffffff, 
 			0 0 40px #ffffff, 
 			0 0 60px rgb(255, 255, 255);
-	}</style>
+	}
+	.glow:hover {
+		font-size: 30;
+		font-family: 'Press Start 2P', sans-serif;
+		color: #fff;
+		text-align: center;
+		text-shadow: 
+			0 0 5px #00f429, 
+			0 0 10px #00f429, 
+			0 0 20px #00f429, 
+			0 0 40px #00f429, 
+			0 0 60px #00f429;
 
+	}
 
-
-<style>
 .glow2 {
 		font-size: 18;
 		font-family: 'Press Start 2P', sans-serif;
@@ -24,10 +34,7 @@
 			0 0 5px rgb(255, 255, 255),
 			0 0 60px rgb(255, 255, 255);
 	}
-</style>
 
-
-<style>
 	.glow3 {
 			font-size: 16;
 			font-family: 'Press Start 2P', sans-serif;
@@ -40,6 +47,74 @@
 				0 0 40px #ffffff, 
 				0 0 60px rgb(255, 255, 255);
 		}
+
+		.glow3:hover {
+			font-size: 16;
+			font-family: 'Press Start 2P', sans-serif;
+			color: #ffffff;
+			text-align: center;
+			text-shadow: 
+				0 0 5px #00f535, 
+				0 0 10px #00f535, 
+				0 0 20px #00f535, 
+				0 0 40px #00f535, 
+				0 0 60px #00f535;
+		}
+
+		.glow4 {
+			font-size: 16;
+			font-family: 'Press Start 2P', sans-serif;
+			color: #ffffff;
+			text-align: center;
+			text-shadow: 
+				0 0 5px #ffffff, 
+				0 0 10px #ffffff, 
+				0 0 20px #ffffff, 
+				0 0 40px #ffffff, 
+				0 0 60px rgb(255, 255, 255);
+		}
+
+		.glow4:hover {
+			font-size: 16;
+			font-family: 'Press Start 2P', sans-serif;
+			color: #ffffff;
+			text-align: center;
+			text-shadow: 
+				0 0 5px #00f535, 
+				0 0 10px #00f535, 
+				0 0 20px #00f535, 
+				0 0 40px #00f535, 
+				0 0 60px #00f535;
+		}
+
+		.glow5 {
+			font-size: 16;
+			font-family: 'Press Start 2P', sans-serif;
+			color: #ffffff;
+			text-align: center;
+			text-shadow: 
+				0 0 5px #ffffff, 
+				0 0 10px #ffffff, 
+				0 0 20px #ffffff, 
+				0 0 40px #ffffff, 
+				0 0 60px rgb(255, 255, 255);
+		}
+
+		.glow5:hover {
+			font-size: 16;
+			font-family: 'Press Start 2P', sans-serif;
+			color: #ffffff;
+			text-align: center;
+			text-shadow: 
+				0 0 5px #00f535, 
+				0 0 10px #00f535, 
+				0 0 20px #00f535, 
+				0 0 40px #00f535, 
+				0 0 60px #00f535;
+		}
+
+
+
 	</style>
 	
 
@@ -88,17 +163,17 @@
 		font-size:18px;
 		padding: 30px;
 		border-radius: 30px;
+		text-align: left;
 }
 	#sigma{
 		position:sticky;
         margin: auto;
-        width: 50%;
+        width: 230px;
         top: 50px;
 		align-items: center;
-		width: 180px;
-		border: 3px solid #ffffff; /* Base border color */
+		border: 3px solid #ffffff;
 		box-shadow: 0 0 10px #ffffff67, 0 0 20px #ffffff6f, 0 0 40px #ffffffbb;
-		height: 50px;
+		height: 30px;
 		background-color: #111111;
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		font-size: 50;
@@ -109,6 +184,7 @@
 
 	}
 
+
 	</style>
 
 	</head>
@@ -118,14 +194,14 @@
 <div id="linkkilista">
 
 	<span class="glow2">Linkit:</span><br /><br /><br />
-	<span class="glow3"><a href="index.html"class="linkki">Takaisin pääsivulle</a><br /> <br/>
-		<a href="https://helsinki.inschool.fi" class="linkki">Wilma</a>
-</span>
+	<span class="glow3"><a href="index.html"class="linkki">Takaisin etusivulle</a><br /> <br/></span>
+	<span class="glow4"><a href="https://helsinki.inschool.fi" class="linkki">Wilma</a><br /> <br/></span>
+	<span class="glow5"><a href="yahyegpt.html" class="linkki">YahyeGPT</a></span>
 
 </div>
 
 <div id="sigma"> 
-<span class="glow"> Sigma</span>
+<span class="glow">ErnoGPT</span>
 
 </div>
 	<style>
@@ -259,89 +335,103 @@
 
 <!DOCTYPE html>
 <html lang="fi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ErnoGPT</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #333; color: white; }
-        h2 { color: #FFD700; }
-        #chatbox {
-            width: 300px;
-            height: 400px;
-            overflow-y: auto;
-            border: 1px solid #282828;
-            padding: 30px;
-            margin: 10px auto;
-            background-color: #555555;
-            border-radius: 30px;
-            text-align: left;
-        }
-        #userInput {
-            width: 250px;
-            padding: 10px;
-            border-radius: 10px;
-            border: none;
-            background-color: #444;
-            color: white;
-        }
-        button {
-            padding: 10px;
-            border-radius: 10px;
-            background-color: #FFD700;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover { background-color: #FFC107; }
-    </style>
-</head>
-<body>
-    <h2>ErnoGPT</h2>
-    <div id="chatbox"></div>
-    <input type="text" id="userInput" placeholder="Kirjoita viesti...">
-    <button onclick="sendMessage()">Lähetä</button>
-
-    <script>
-        async function getResponse(userMessage) {
-            const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": "Bearer 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" 
-                },
-                body: JSON.stringify({
-                    model: "deepseek/deepseek-r1:free",
-                    messages: [{ role: "user", content: userMessage }],
-                    max_tokens: 500
-                })
-            });
-            const data = await response.json();
-            return data.choices[0].message.content;
-        }
-
-        function sendMessage() {
-            const userInput = document.getElementById("userInput");
-            const chatbox = document.getElementById("chatbox");
-
-            if (userInput.value.trim() === "") return; // Ei lähetä tyhjiä viestejä
-
-            chatbox.innerHTML += `<p><b>Sinä:</b> ${userInput.value}</p>`;
-            getResponse(userInput.value).then(response => {
-                chatbox.innerHTML += `<p><b>Erno:</b> ${response}</p>`;
-                chatbox.scrollTop = chatbox.scrollHeight; // Automaattinen skrollaus viimeiseen viestiin
-            });
-
-            userInput.value = ""; // Tyhjentää input-kentän
-        }
-
-        // Enter-näppäin lähettää viestin
-        document.getElementById("userInput").addEventListener("keypress", function(event) {
-            if (event.key === "Enter") {
-                sendMessage();
-                event.preventDefault();
-            }
-        });
-    </script>
-</body>
-</html>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ErnoGPT</title>
+		<style>
+			body { font-family: Arial, sans-serif; text-align: center; background-color: #333; color: white; }
+			h2 { color: #FFD700; }
+			#chatbox {
+				width: 600px;
+				height: 400px;
+				overflow: auto;
+				border: 1px solid #282828;
+				padding: 30px;
+				margin: 10px auto;
+				background-color: #555555;
+				border-radius: 30px;
+				text-align: left;
+			}
+			#userInput {
+				width: 570px;
+				padding: 10px;
+				border-radius: 10px;
+				border: none;
+				background-color: #444;
+				color: white;
+			}
+			button {
+				padding: 10px;
+				border-radius: 10px;
+				background-color: #FFD700;
+				border: none;
+				cursor: pointer;
+			}
+			button:hover { background-color: #FFC107; }
+			.loading {
+				margin: 10px;
+				width: 30px;
+				height: 30px;
+				border: 4px solid transparent;
+				border-top: 4px solid #FFD700;
+				border-radius: 50%;
+				animation: spin 1s linear infinite;
+			}
+			@keyframes spin {
+				0% { transform: rotate(0deg); }
+				100% { transform: rotate(360deg); }
+			}
+		</style>
+	</head>
+	<body>
+		<h2>ErnoGPT</h2>
+		<div id="chatbox"></div>
+		<input type="text" id="userInput" placeholder="Kirjoita viesti...">
+		<button onclick="sendMessage()">Lähetä</button>
+	
+		<script>
+			async function getResponse(userMessage) {
+				const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+					method: "POST",
+					headers: {
+						"Authorization": "Bearer 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" // Lisää oma API-avaimesi tähän!
+					},
+					body: JSON.stringify({
+						model: "deepseek/deepseek-chat:free",
+						messages: [{ role: "user", content: userMessage }],
+						max_tokens: 5000
+					})
+				});
+				const data = await response.json();
+				return data.choices[0].message.content;
+			}
+	
+			function sendMessage() {
+				const userInput = document.getElementById("userInput");
+				const chatbox = document.getElementById("chatbox");
+	
+				if (userInput.value.trim() === "") return; // Ei lähetä tyhjiä viestejä
+	
+				chatbox.innerHTML += `<p><b>Sinä:</b> ${userInput.value}</p>`;
+				chatbox.innerHTML += `<p><i><b>Erno miettii...</b></i><div class="loading"></div></p>`;
+	
+				getResponse(userInput.value).then(response => {
+					// Poistaa lataus-viestin ja lisää botin vastauksen
+					const loadingElement = chatbox.querySelector(".loading");
+					loadingElement.parentNode.innerHTML = `<p><b>Erno:</b> ${response}</p>`;
+				});
+	
+				userInput.value = ""; // Tyhjentää input-kentän
+			}
+	
+			// Enter-näppäin lähettää viestin
+			document.getElementById("userInput").addEventListener("keypress", function(event) {
+				if (event.key === "Enter") {
+					sendMessage();
+					event.preventDefault();
+				}
+			});
+		</script>
+	</body>
+	</html>
