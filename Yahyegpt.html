@@ -1,4 +1,9 @@
 <html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 	<style>        .glow {
 		font-size: 30;
 		font-family: 'Press Start 2P', sans-serif;
@@ -47,6 +52,16 @@
 
 
 <style>
+
+	body {
+      background-image: url('https://images.unsplash.com/photo-1486707471592-8e7eb7e36f78?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZvZ2d5JTIwZm9yZXN0fGVufDB8fDB8fHww');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      margin: 0;
+      height: 100vh;
+    }
+
 	.glow3 {
 			font-size: 16;
 			font-family: 'Press Start 2P', sans-serif;
@@ -148,10 +163,10 @@
 		  color: rgb(43, 255, 0);
 		}
 	  </style>
-	<body background="https://cdn.pixabay.com/photo/2014/06/16/23/39/black-370118_1280.png"></body>
+	
 	<head>
 		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-		<title>Otsikko</title>
+		<title>YahyeGPT - Tekoäly</title>
 
 	<style type="text/css">
 		
@@ -403,23 +418,30 @@
 		<button onclick="sendMessage()">Lähetä</button>
 	
 		<script>
-			async function getResponse(userMessage) {
-				const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-						"Authorization": "Bearer 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"
-					},
-					body: JSON.stringify({
-						model: "google/gemini-exp-1206:free",
-						messages: [{ role: "user", content: userMessage }],
-						max_tokens: 500
-					})
-				});
-				const data = await response.json();
-				return data.choices[0].message.content;
-			}
-	
+
+
+async function getResponse(userMessage) {
+  const fatmonkey = "c2stb3ItdjEtZWU4NmU3YzExZDE5YTQ0OGM1ODgxNDYzY2NjMWI3ODExODkxOTE4NDBiZjFmMGY2MWQ1YjNhMDQwODQwMmI1Yw=="; 
+  
+  const fatneod = atob(fatmonkey);
+
+  const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${fatneod}`
+    },
+    body: JSON.stringify({
+      model: "google/gemini-exp-1206:free",
+      messages: [{ role: "user", content: userMessage }],
+      max_tokens: 500
+    })
+  });
+
+  const data = await response.json();
+  return data.choices[0].message.content;
+}
+
 			function sendMessage() {
 				const userInput = document.getElementById("userInput");
 				const chatbox = document.getElementById("chatbox");
