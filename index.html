@@ -1,5 +1,23 @@
 <html>
-	<style>        .glow {
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+	<style>    
+	
+	body {
+      background-image: url('https://images.unsplash.com/photo-1486707471592-8e7eb7e36f78?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGZvZ2d5JTIwZm9yZXN0fGVufDB8fDB8fHww');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      margin: 0;
+      height: 100vh;
+	  justify-content: center;
+	  display: flex;
+    }
+
+	.glow {
 		font-size: 30;
 		font-family: 'Press Start 2P', sans-serif;
 		color: #fff;
@@ -115,6 +133,9 @@
 
 
 
+
+		
+
 	</style>
 
 
@@ -123,7 +144,7 @@
 
 
 
-	<style>
+<style>
 		.sigma {
 			color: #ff0000;
 			font-family: 'Press Start 2P', sans-serif;
@@ -131,17 +152,16 @@
 	</style>
 
 
-	<style>
+<style>
 		.greentext {
 		  color: rgb(43, 255, 0);
 		}
 	  </style>
-	<body background="https://cdn.pixabay.com/photo/2014/06/16/23/39/black-370118_1280.png"></body>
 	<head>
 		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-		<title>Otsikko</title>
+		<title>Etusivu - Tekoäly</title>
 
-	<style type="text/css">
+<style type="text/css">
 		
 
 
@@ -182,6 +202,9 @@
 		text-align: center;
 		padding: 20px;
 		border-radius: 30px;
+		transition: all 0.1s ease;
+		transform-style: preserve-3d;
+		perspective: 1000px;
 	}
 #ligma{
 	position:fixed;
@@ -200,16 +223,28 @@
 		border-radius: 10px;
 	}
 
+	#logo {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	transition: all 0.1s ;
+		transform-style: preserve-3d;
+		perspective: 100px;
+}
+
 	</style>
 
 	</head>
 
-	<body>
+<body>
+
+		<div id="logo">
+			<img src="logo.png" height="130px">
+			</div>
 
 
 
-	<div id="ligma">
-
+<div id="ligma">
 
 
 
@@ -218,9 +253,11 @@
 <div id="linkkilista">
 
 	<span class="glow2">Linkit:</span><br /><br /><br />
-	<span class="glow3"><a href="ernogpt.html"class="linkki">ErnoGPT</a><br /> <br/></span>
-	<span class="glow4"><a href="https://helsinki.inschool.fi" class="linkki">Wilma</a><br /> <br/></span>
-	<span class="glow5"><a href="yahyegpt.html" class="linkki">YahyeGPT</a></span>
+	<span class="glow3"><a href="ernogpt.html">ErnoGPT</a><br /> <br/></span>
+	<span class="glow4"><a href="https://helsinki.inschool.fi">Wilma</a><br /> <br/></span>
+	<span class="glow5"><a href="yahyegpt.html">YahyeGPT</a></span>
+
+	
 
 
 </div>
@@ -229,6 +266,8 @@
 <span class="glow">Etusivu</span>
 
 </div>
+
+
 	<style>
 		.snowflake {
 		  color: #fff;
@@ -352,6 +391,33 @@
 			<div class="inner">❅</div>
 		  </div>
 		</div>
+		
+
+		<script>
+			const box = document.querySelector('#logo');
+		
+			document.addEventListener('mousemove', (e) => {
+	
+			  const boxRect = box.getBoundingClientRect();
+			  const boxCenterX = boxRect.left + boxRect.width / 2;
+			  const boxCenterY = boxRect.top + boxRect.height / 2;
+		
+		
+			  const deltaX = e.clientX - boxCenterX;
+			  const deltaY = e.clientY - boxCenterY;
+		
+
+			  let tiltX = deltaY / boxRect.height * 15;  
+			  let tiltY = -deltaX / boxRect.width * 15; 
+		
+			
+			  tiltX = Math.max(-20, Math.min(tiltX, 20));
+			  tiltY = Math.max(-20, Math.min(tiltY, 20));
+		
+	
+			  box.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+			});
+		  </script>
 		
 
 
