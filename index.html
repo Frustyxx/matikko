@@ -238,9 +238,9 @@
 
 <body>
 
-		<div id="logo">
-			<img src="logo.png" height="130px">
-			</div>
+	<div id="logo">
+		<a href="index.html"><img src="logo.png" height="130px"></a>
+		   </div>
 
 
 
@@ -397,24 +397,19 @@
 			const box = document.querySelector('#logo');
 		
 			document.addEventListener('mousemove', (e) => {
-	
 			  const boxRect = box.getBoundingClientRect();
 			  const boxCenterX = boxRect.left + boxRect.width / 2;
 			  const boxCenterY = boxRect.top + boxRect.height / 2;
-		
-		
+	
 			  const deltaX = e.clientX - boxCenterX;
 			  const deltaY = e.clientY - boxCenterY;
-		
 
 			  let tiltX = deltaY / boxRect.height * 15;  
-			  let tiltY = -deltaX / boxRect.width * 15; 
+			  let tiltY = -deltaX / boxRect.width * 15;  
 		
-			
 			  tiltX = Math.max(-20, Math.min(tiltX, 20));
 			  tiltY = Math.max(-20, Math.min(tiltY, 20));
 		
-	
 			  box.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
 			});
 		  </script>
