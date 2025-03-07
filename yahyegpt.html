@@ -212,11 +212,24 @@
 	}
 	
 
+	#logo {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+	transition: all 0.1s ;
+		transform-style: preserve-3d;
+		perspective: 100px;
+}
+
 	</style>
 
 	</head>
 
-	<body>
+<body>
+
+	<div id="logo">
+		<a href="index.html"><img src="logo.png" height="130px"></a>
+		   </div>
 
 <div id="linkkilista">
 
@@ -370,22 +383,23 @@
 			body { font-family: Arial, sans-serif; text-align: center; background-color: #333; color: white; }
 			h2 { color: #FFD700; }
 			#chatbox {
-				width: 600px;
+				width: 800px;
 				height: 400px;
 				overflow: auto;
-				border: 1px solid #282828;
+				border: 1px solid #ffffff;
 				padding: 30px;
 				margin: 10px auto;
-				background-color: #555555;
+				background-color: #0f0f0f;
 				border-radius: 30px;
 				text-align: left;
 			}
 			#userInput {
-				width: 570px;
+				width: 790px;
 				padding: 10px;
 				border-radius: 10px;
 				border: none;
-				background-color: #444;
+				background-color: #191919;
+				border: 1px solid 	white;
 				color: white;
 			}
 			button {
@@ -422,21 +436,21 @@
 
 async function getResponse(userMessage) {
 
-  const hexString = "6332737462334974646A45745A5755344E6D5533597A45785A444535595451304F474D314F4467784E44597A59324E6A4D5749334F4445784F446B784F5445344E4442695A6A466D4D4759324D575131596A4E684D4451774F4451774D6D493159773D3D";
+  const yap = "6332737462334974646A45745A5755344E6D5533597A45785A444535595451304F474D314F4467784E44597A59324E6A4D5749334F4445784F446B784F5445344E4442695A6A466D4D4759324D575131596A4E684D4451774F4451774D6D493159773D3D";
   
-  const byteArray = hexString.match(/.{1,2}/g).map(byte => parseInt(byte, 16));
-  const binaryString = String.fromCharCode(...byteArray);
+  const nbayoungboy = yap.match(/.{1,2}/g).map(byte => parseInt(byte, 16));
+  const beabadobee = String.fromCharCode(...nbayoungboy);
   
-  const decodedBase64 = atob(binaryString);
+  const neodisfat = atob(beabadobee);
 
 
-  const apiKey = decodedBase64;
+  const bobaisgay = neodisfat;
 
   const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${apiKey}`
+      "Authorization": `Bearer ${bobaisgay}`
     },
     body: JSON.stringify({
       model: "google/gemini-exp-1206:free",
@@ -453,21 +467,19 @@ async function getResponse(userMessage) {
 				const userInput = document.getElementById("userInput");
 				const chatbox = document.getElementById("chatbox");
 	
-				if (userInput.value.trim() === "") return; // Ei lähetä tyhjiä viestejä
+				if (userInput.value.trim() === "") return;
 	
 				chatbox.innerHTML += `<p><b>Sinä:</b> ${userInput.value}</p>`;
 				chatbox.innerHTML += `<p><i><b>Yahye miettii...</b></i><div class="loading"></div></p>`;
 	
 				getResponse(userInput.value).then(response => {
-					// Poistaa lataus-viestin ja lisää botin vastauksen
 					const loadingElement = chatbox.querySelector(".loading");
 					loadingElement.parentNode.innerHTML = `<p><b>Yahye:</b> ${response}</p>`;
 				});
 	
-				userInput.value = ""; // Tyhjentää input-kentän
+				userInput.value = "";
 			}
 	
-			// Enter-näppäin lähettää viestin
 			document.getElementById("userInput").addEventListener("keypress", function(event) {
 				if (event.key === "Enter") {
 					sendMessage();
@@ -475,5 +487,26 @@ async function getResponse(userMessage) {
 				}
 			});
 		</script>
+				<script>
+					const box = document.querySelector('#logo');
+				
+					document.addEventListener('mousemove', (e) => {
+		
+					  const boxRect = box.getBoundingClientRect();
+					  const boxCenterX = boxRect.left + boxRect.width / 2;
+					  const boxCenterY = boxRect.top + boxRect.height / 2;
+				
+					  const deltaX = e.clientX - boxCenterX;
+					  const deltaY = e.clientY - boxCenterY;
+				
+					  let tiltX = deltaY / boxRect.height * 15;  
+					  let tiltY = -deltaX / boxRect.width * 15;  
+				
+					  tiltX = Math.max(-20, Math.min(tiltX, 20));
+					  tiltY = Math.max(-20, Math.min(tiltY, 20));
+		
+					  box.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+					});
+				  </script>
 	</body>
 	</html>
